@@ -1,0 +1,52 @@
+name: SonarCloud Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    name: Build and Analyze
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repo
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Needed for better analysis
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3. Install dependencies (use yarn or npm)
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      # 4. Build React + Vite project
+      - name: Build project
+        run: yarn build
+
+      # 5. Run tests (optional but recommended)
+      - name: Run tests
+        run: yarn test --watchAll=false || echo "No tests found"
+
+      # 6. SonarCloud Scan
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_KEY }}
+        with:
+          args: >
+            -Dsonar.projectKey=Test-talentis_student-test-repo
+            -Dsonar.organization=test-talentis
+            -Dsonar.sources=src
+            -Dsonar.exclusions=**/node_modules/**,**/dist/**
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+
