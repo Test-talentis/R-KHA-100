@@ -31,7 +31,7 @@ jobs:
 
       # 4. Build React + Vite project
       - name: Build project
-        run: npm build
+        run: npm run build
 
       # 5. Run tests (optional but recommended)
       - name: Run tests
