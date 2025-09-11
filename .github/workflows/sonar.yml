@@ -34,9 +34,10 @@ jobs:
         with:
           # Project properties can also be set in sonar-project.properties file
           args: >
-            -Dsonar.projectKey=Test-talentis_R-KHA-100
+            -Dsonar.projectKey=${{ github.repository }}
             -Dsonar.organization=Test-talentis
             -Dsonar.projectVersion=1.0
+            -Dsonar.branch.name=${{ github.ref_name }}
             -Dsonar.sources=src
             -Dsonar.exclusions=**/node_modules/**,**/dist/**
             -Dsonar.language=ts
