@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { Form } from "react-bootstrap";
 import { Path, FieldValues, UseFormRegister } from "react-hook-form";
 

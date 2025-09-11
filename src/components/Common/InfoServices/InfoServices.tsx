@@ -1,6 +1,6 @@
 
 import InfoService from "./InfoService/InfoService";
-import styles from "./style.module.css";
+// import styles from "./style.module.css";
 import serviceData from "@data/serviceData";
 
 

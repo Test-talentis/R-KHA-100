@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { TQuickLinks } from '@types'
 import QuikLink from './QuikLink'
 import { Heading } from '@components/ui'
