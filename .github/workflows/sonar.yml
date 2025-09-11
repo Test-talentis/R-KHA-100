@@ -27,7 +27,7 @@ jobs:
 
       # 3. Install dependencies (use yarn or npm)
       - name: Install dependencies
-        run: npm install 
+        run: npm install
 
       # 4. Build React + Vite project
       - name: Build project
@@ -41,12 +41,14 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         env:
-          SONAR_TOKEN: /${{ secrets.SONAR_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_KEY }}
         with:
           args: >
-            -Dsonar.projectKey=Test-talentis_student-test-repo
-            -Dsonar.organization=test-talentis
-            -Dsonar.sources=src
-            -Dsonar.exclusions=**/node_modules/**,**/dist/**
-            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
-
+            sonar.projectKey=Test-talentis_R-KHA-100
+            sonar.organization=Test-talentis
+            sonar.projectVersion=1.0
+            sonar.sources=src
+            sonar.exclusions=**/node_modules/**,**/dist/**
+            sonar.language=ts
+            sonar.javascript.lcov.reportPaths=coverage/lcov.info
