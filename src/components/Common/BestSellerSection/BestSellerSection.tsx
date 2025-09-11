@@ -12,7 +12,7 @@ function BestSellerSection() {
     (state) => state.bestSellers
   );
   //imp
-
+  //hdhd
     useEffect(() => {
         dispatch(actGetBestSellersProducts());
     },[dispatch])
