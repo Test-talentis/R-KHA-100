@@ -8,36 +8,24 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  build:
-    name: Build and Analyze
+  sonarcloud:
+    name: SonarCloud Scan
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Checkout repo
       - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Needed for better analysis
+        uses: actions/checkout@v3
 
-      # 2. Setup Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      # 3. Install dependencies (use yarn or npm)
       - name: Install dependencies
         run: npm install
 
-      # 4. Build React + Vite project
-      - name: Build project
-        run: npm run build
+      - name: Run tests and generate coverage
+        run: npm run test -- --coverage
 
-      # 5. Run tests (optional but recommended)
-      - name: Run tests
-        run: yarn test --watchAll=false || echo "No tests found"
-
-      # 6. SonarCloud Scan
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         env:
@@ -45,10 +33,10 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-           -Dsonar.projectKey=Test-talentis_R-KHA-100
-           -Dsonar.organization=Test-talentis
-           -Dsonar.projectVersion=1.0
-           -Dsonar.sources=src
-           -Dsonar.exclusions=**/node_modules/**,**/dist/**
-           -Dsonar.language=ts
-           -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.projectKey=Test-talentis_R-KHA-100
+            -Dsonar.organization=Test-talentis
+            -Dsonar.projectVersion=1.0
+            -Dsonar.sources=src
+            -Dsonar.exclusions=**/node_modules/**,**/dist/**
+            -Dsonar.language=ts
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
