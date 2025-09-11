@@ -11,6 +11,7 @@ function BestSellerSection() {
   const { bestSellerProducts, status, error } = useAppSelector(
     (state) => state.bestSellers
   );
+  //imp
 
     useEffect(() => {
         dispatch(actGetBestSellersProducts());
