@@ -13,6 +13,7 @@ function BestSellerSection() {
   );
   //imp
   //hdhd
+  //kndkndkndkndknd
     useEffect(() => {
         dispatch(actGetBestSellersProducts());
     },[dispatch])
