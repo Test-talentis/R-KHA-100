@@ -1,0 +1,77 @@
+.hero_section {
+    padding: var(--pading) 0;
+    position: relative;
+}
+/* hero Left */
+.hero_left {
+    transform: translateX(-8rem);
+    transition: transform 1.5s ease-in-out;
+}
+
+.hero_left_isAnimated {
+    transform: translateX(0);
+}
+
+.hero_title {
+    font-size: 5rem;
+    margin-bottom: 0.80rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+@media (max-width:771px) {
+    .hero_title {
+        font-size: 1.8rem;
+    }
+}
+
+.hero_desc {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Hero Right */
+.hero_right {
+
+}
+
+@media (max-width:991px) {
+    .hero_right {
+        display: none;
+    }
+}
+
+.hero_images {
+    position: relative;
+}   
+
+.hero_images img {
+    position: relative;
+    width: 18rem;
+    height: 24rem;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.hero_img_left {
+    top: 0;
+    transition: top 1.5s ease-in-out;
+   
+}
+
+.hero_img_left_isAnimated {
+    top: 3rem;
+}
+
+
+.hero_img_right {
+    top: 3rem;
+    transition: top 1.5s ease-in-out;
+}
+
+.hero_left_right_isAnimated {
+    top: 0;
+}

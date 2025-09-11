@@ -1,0 +1,4 @@
+.product_section {
+    padding: var(--padding) 0;
+    min-height: 400px;
+}

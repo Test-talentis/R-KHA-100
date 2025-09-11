@@ -1,0 +1,14 @@
+.castumlink a  {
+    color: white;
+    text-transform: capitalize;
+}
+
+.castumlink li {
+    margin-bottom: 10px;
+    transition:  0.2s ease-in-out;
+}
+
+.castumlink li:hover {
+    opacity: 0.7;
+    transform: translateX(3px);
+}

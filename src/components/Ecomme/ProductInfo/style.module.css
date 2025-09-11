@@ -1,0 +1,115 @@
+/* direction Column */
+
+.product-column {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #ddd;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+    display:inline-block;
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: 1.5s ease-in-out;
+}
+
+.product-column_animated {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.productImg-column {
+    height: 440px;
+    background-color: #ddd;
+}
+
+.productImg-column img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.5s linear;
+}
+
+
+
+.productInfo-column {
+    padding: 10px;
+}
+
+.productInfo-column_styled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    
+}
+
+
+.productInfo-column_styled h2,
+.productInfo-column_styled p,
+.productInfo-column_styled button
+{   
+    transform: translateX(-210px);
+    transition: 0.5s linear;
+}
+
+.productInfo-column_styled:hover 
+ h2,
+ .productInfo-column_styled:hover 
+ p,
+ .productInfo-column_styled:hover 
+ button {
+    transform: translateX(0);
+}
+
+.productInfo-column_styled div {
+    transform: translate(1000%);
+    transition: 0.5s linear;
+}
+
+.productInfo-column_styled:hover div {
+    transform: translateX(0);
+}
+
+
+.productInfo-column h2{
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+/* Product row */
+.product-row {
+    display: flex;
+    gap: 10px;
+}
+
+
+.product-row h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+
+.productImg-row img {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.productInfo-row {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+

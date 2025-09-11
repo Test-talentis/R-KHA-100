@@ -1,0 +1,42 @@
+.container {
+    position: relative;
+    cursor: pointer;
+}
+
+.totalNum {
+    position: absolute;
+    top:-13px;
+    left: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+    border-radius: 50%;
+    color: white;
+    background-color: #0dacf0;
+    
+}
+
+.pumpingAnimate {
+    animation: pumping 300ms ease-in-out;
+}
+
+@keyframes pumping {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(0.2);
+    }
+    30% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.7);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

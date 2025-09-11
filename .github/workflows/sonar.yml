@@ -27,11 +27,11 @@ jobs:
 
       # 3. Install dependencies (use yarn or npm)
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm install 
 
       # 4. Build React + Vite project
       - name: Build project
-        run: yarn build
+        run: npm build
 
       # 5. Run tests (optional but recommended)
       - name: Run tests
@@ -41,7 +41,7 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_KEY }}
+          SONAR_TOKEN: /${{ secrets.SONAR_KEY }}
         with:
           args: >
             -Dsonar.projectKey=Test-talentis_student-test-repo

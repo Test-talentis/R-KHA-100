@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    height: 100vh;
+}
+
+.not-found {
+    text-align: center;
+}
+
+.not-found h1 {
+    font-size: 50px;
+}
+
+.not-found p {
+    font-size: 30px;
+}

@@ -1,0 +1,19 @@
+.filter_button {
+    border: 1px solid var(--border-color-second);
+    padding: 0.75rem 1.3rem;
+    border-radius: 50px;
+    background-color: #FFF;
+    transition:  0.5s ease-in-out;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+}
+
+.filter_button:hover {
+    background-color: var(--bg-color);
+    color: white;
+}
+
+.filter_button_isFill {
+    background-color: var(--bg-color);
+    color: white;
+}
