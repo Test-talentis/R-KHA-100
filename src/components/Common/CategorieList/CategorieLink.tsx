@@ -1,4 +1,3 @@
-import React from 'react'
 import { List } from '@components/ui';
 import { TCategory } from '@types'
 import { Link } from 'react-router-dom';

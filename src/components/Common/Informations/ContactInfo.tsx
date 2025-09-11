@@ -1,6 +1,6 @@
 import { List } from '@components/ui'
 import { TContactInfo } from '@types'
-import React from 'react'
+
 
 import Phone from "@assets/svg/phone.svg?react";
 import Email from "@assets/svg/envlope.svg?react";

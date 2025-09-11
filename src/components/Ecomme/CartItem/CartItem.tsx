@@ -47,7 +47,9 @@ const CartItem = memo(
           img={img}
           price={price}
           quantity={quantity}
-          direction="row">
+          direction="row"
+          isAnimated
+          >
           <Button
             variant="secondary"
             style={{ width: "120px" }}

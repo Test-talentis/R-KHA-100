@@ -1,5 +1,4 @@
 import { Heading } from '@components/ui'
-import React from 'react'
 
 function Account() {
   return (

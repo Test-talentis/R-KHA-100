@@ -8,7 +8,6 @@ import { Heading, Typographie } from "@components/ui";
 const {
   hero_section,
   hero_left,
-  hero_title,
   hero_desc,
   hero_right,
   hero_images,

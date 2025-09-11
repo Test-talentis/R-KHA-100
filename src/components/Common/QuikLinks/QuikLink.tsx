@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { TQuickLinks } from '@types'
 import { Link } from 'react-router-dom'
 import { List } from '@components/ui'

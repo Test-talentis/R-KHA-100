@@ -1,6 +1,6 @@
 import { Loading } from "@components/Feedback";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import GridList from "../GridList/GridList";
 import Product from "@components/Ecomme/Product/Product";
 import { actGetBestSellersProducts } from "@store/bestSellersProducts/bestSellersProductsSlice";

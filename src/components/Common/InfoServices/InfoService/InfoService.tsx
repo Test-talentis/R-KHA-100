@@ -1,10 +1,10 @@
-import React from "react";
-import styles from "./style.module.css";
+
+// import styles from "./style.module.css";
 import Heading from "@components/ui/Heading/Heading";
 import { Typographie } from "@components/ui";
 import { TInfoService } from "@types";
 
-const { info_service } = styles;
+// const { info_service } = styles;
 
 type TInfoServiceProps = {
   data: TInfoService[];
