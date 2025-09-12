@@ -1,4 +1,4 @@
-name: SonarCloud Auto Analysis
+name: Call SonarCloud Analysis
 
 on:
   push:
@@ -7,27 +7,13 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  sonarcloud-scan:
-    name: SonarCloud Analysis
+  call-sonar:
     runs-on: ubuntu-latest
-    # ADD THIS LINE TO SKIP .GITHUB REPOSITORY:
-    if: github.repository != 'Test-talentis/.github'
-    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Trigger SonarCloud Analysis
+        uses: peter-evans/repository-dispatch@v2
         with:
-          fetch-depth: 0
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.projectKey=${{ github.repository }}
-            -Dsonar.organization=Test-talentis
-            -Dsonar.branch.name=${{ github.ref_name }}
-            -Dsonar.sources=.
-            -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/build/**,**/.github/**
+          token: ${{ secrets.ORG_PAT }}
+          repository: Test-talentis/.github
+          event-type: run-sonar-scan
+          client-payload: '{"repository": "${{ github.repository }}", "ref": "${{ github.ref_name }}"}'
