@@ -6,7 +6,7 @@ import Phone from "@assets/svg/phone.svg?react";
 import Email from "@assets/svg/envlope.svg?react";
 
 function ContactInfo({email, phone}: TContactInfo) {
-  //ddjhdjhlkjdkdjmizojzihzokjekjekjekjekeddkdkdkkddkdkdkddkdkfkfkfkfkffkfkdfdfdffddfdfsjjsjsjs
+  //ddjhdjhlkjdkdjmizojzihzokjekjekjekjekeddkdkdkkddkdkdkddkdkfkfkfkfkffkfkdfdfdffddfdfsjjsjsjslksksksssksjkhshsjkk
   return (
     <ul>
         <List title={phone}  icon={<Phone title='phone'/>}/>
